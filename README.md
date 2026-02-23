@@ -1,5 +1,5 @@
 # EXP-03-Implement-Breadth-First-Search-Traversal-of-a-Graph
-<h3>Name:S.Jeevasri </h3>
+<h3>Name: S.Jeevasri </h3>
 <h3>Register Number: 212224020019  </h3>
 <H3>Aim:</H3>
 To Implement Breadth First Search Traversal of a Graph using Python 3. 
@@ -16,7 +16,7 @@ Starting from the root, all the nodes at a particular level are visited first, a
 nodes are traversed until all the nodes are visited. 
 To do this, a queue is used. All the adjacent unvisited nodes of the current level are pushed into the 
 queue, and the current-level nodes are marked visited and popped from the queue. 
-Illustration: 
+<h3> Illustration:  </h3>
 Let us understand the working of the algorithm with the help of the following example. 
 
 <B>Step1: Initially queue and visited arrays are empty. </B>
@@ -63,9 +63,6 @@ Algorithm:
 5. If Not Visited, add it to the Queue. Else Continue. 
 6. Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes. 
 <H3>Program:</H3>
-~~~
-from collections import deque 
-from collections import defaultdict
 V E 
 FOR EVERY EDGE 
 U V 
@@ -79,34 +76,43 @@ C D
 D E  
 D G 
 G F 
+```
 
-def bfs(graph,start,visited,path): 
-queue = deque() 
-path.append(start) 
-queue.append(start) 
-visited[start] = True 
-while len(queue) != 0: 
-tmpnode = queue.popleft() 
-for neighbour in graph[tmpnode]: 
-if visited[neighbour] == False: 
-path.append(neighbour) 
-queue.append(neighbour) 
-visited[neighbour] = True 
-return path 
-graph = defaultdict(list) 
-v,e = map(int,input().split()) 
-for i in range(e): 
-u,v = map(str,input().split()) 
-graph[u].append(v) 
-graph[v].append(u) 
-start = '0' 
-#start=’A’ 
-path = [] 
-visited = defaultdict(bool) 
-traversedpath = bfs(graph,start,visited,path) 
+**Code:**
+```python
+from collections import deque
+from collections import defaultdict
+
+def bfs(graph, start, visited, path):
+    queue = deque()
+    path.append(start)
+    queue.append(start)
+    visited[start] = True
+    
+    while len(queue) != 0:
+        tmpnode = queue.popleft()
+        for neighbour in graph[tmpnode]:
+            if visited[neighbour] == False:
+                path.append(neighbour)
+                queue.append(neighbour)
+                visited[neighbour] = True
+    return path
+
+graph = defaultdict(list)
+v, e = map(int, input().split())
+for i in range(e):
+    u, v = map(str, input().split())
+    graph[u].append(v)
+    graph[v].append(u)
+
+start = 'A'   # or '0' depending on your graph
+path = []
+visited = defaultdict(bool)
+
+traversedpath = bfs(graph, start, visited, path)
 print(traversedpath)
-~~~
-Sample Input : 
+```
+<h3>Sample Input : </h3>
 5 6 
 0 1 
 0 2 
@@ -114,5 +120,5 @@ Sample Input :
 1 3 
 2 4 
 3 4 
-Sample Output: 
+<h3> Sample Output: </h3> 
 ['0', '1', '2', '3', '4'] 

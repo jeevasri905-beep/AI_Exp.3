@@ -3,9 +3,8 @@ Breadth First Search Traversal of a Graph
 
 
 AIM: 
-Theory: 
 To Implement Breadth First Search Traversal of a Graph using Python 3. 
-
+Theory: 
 Breadth-First Traversal (or Search) for a graph is like the Breadth-First Traversal of a tree. 
 The only catch here is that, unlike trees, graphs may contain cycles so that we may come to the same 
 node again. To avoid processing a node more than once, we divide the vertices into two categories: 
@@ -86,7 +85,8 @@ C D
 D E  
 D G 
 G F 
-''' 
+
+```
 def bfs(graph,start,visited,path): 
 queue = deque() 
 path.append(start) 
@@ -111,7 +111,8 @@ start = '0'
 path = [] 
 visited = defaultdict(bool) 
 traversedpath = bfs(graph,start,visited,path) 
-print(traversedpath) 
+print(traversedpath)
+```
 Sample Input : 
 5 6 
 0 1 

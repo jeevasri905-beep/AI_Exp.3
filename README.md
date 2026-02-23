@@ -1,10 +1,9 @@
 # EXP-03-Implement-Breadth-First-Search-Traversal-of-a-Graph
-Breadth First Search Traversal of a Graph
-
-
-AIM: 
+<h3>Name:S.Jeevasri </h3>
+<h3>Register Number: 212224020019  </h3>
+<H3>Aim:</H3>
 To Implement Breadth First Search Traversal of a Graph using Python 3. 
-Theory: 
+<h3>Theory:</h3>
 Breadth-First Traversal (or Search) for a graph is like the Breadth-First Traversal of a tree. 
 The only catch here is that, unlike trees, graphs may contain cycles so that we may come to the same 
 node again. To avoid processing a node more than once, we divide the vertices into two categories: 
@@ -19,15 +18,13 @@ To do this, a queue is used. All the adjacent unvisited nodes of the current lev
 queue, and the current-level nodes are marked visited and popped from the queue. 
 Illustration: 
 Let us understand the working of the algorithm with the help of the following example. 
-Step1: Initially queue and visited arrays are empty.
-<img width="681" height="286" alt="image" src="https://github.com/user-attachments/assets/5872b545-43d7-4b7a-8d53-fc3b06287d2d" />
 
-Queue and visited arrays are empty initially. 
+<B>Step1: Initially queue and visited arrays are empty. </B>
+<img width="681" height="286" alt="image" src="https://github.com/user-attachments/assets/5872b545-43d7-4b7a-8d53-fc3b06287d2d" />
 
 <B>Step2: Push node 0 into queue and mark it visited. </b>
 <img width="657" height="282" alt="image" src="https://github.com/user-attachments/assets/2e7d7fea-e0a5-4dfe-a2fd-310ea99972cf" />
 
-Push node 0 into queue and mark it visited. 
 
 <B> Step 3: Remove node 0 from the front of queue and visit the unvisited neighbours and push them into 
 queue. </B>
@@ -42,7 +39,6 @@ queue. </B>
 queue. </B>
 <img width="703" height="260" alt="image" src="https://github.com/user-attachments/assets/1fe9225d-7244-4574-b93a-1044f6f302ad" />
 
-Remove node 2 from the front of queue and visit the unvisited neighbours and push them into queue. 
 
 <B>Step 6: Remove node 3 from the front of queue and visit the unvisited neighbours and push them into 
 queue.  </B>
@@ -51,9 +47,7 @@ queue.  </B>
 As we can see that every neighbours of node 3 is visited, so move to the next node that are in the 
 front of the queue. 
 Remove node 3 from the front of queue and visit the unvisited neighbours and push them into queue.  
-<B>
-
-Steps 7: Remove node 4 from the front of queue and visit the unvisited neighbours and push them 
+<B> Steps 7: Remove node 4 from the front of queue and visit the unvisited neighbours and push them 
 into queue.  </B>
 <img width="646" height="248" alt="image" src="https://github.com/user-attachments/assets/68cfee3e-1f6a-4931-b7db-69412c2e6d07" />
 
@@ -68,10 +62,10 @@ Algorithm:
 4. Find its Successors Or neighbors and Check whether the node is visited or not. 
 5. If Not Visited, add it to the Queue. Else Continue. 
 6. Iterate steps 4 and 5 until all nodes get visited, and there are no more unvisited nodes. 
-Program: 
+<H3>Program:</H3>
+~~~
 from collections import deque 
-from collections import defaultdict 
-''' 
+from collections import defaultdict
 V E 
 FOR EVERY EDGE 
 U V 
@@ -86,7 +80,6 @@ D E
 D G 
 G F 
 
-```
 def bfs(graph,start,visited,path): 
 queue = deque() 
 path.append(start) 
@@ -112,7 +105,7 @@ path = []
 visited = defaultdict(bool) 
 traversedpath = bfs(graph,start,visited,path) 
 print(traversedpath)
-```
+~~~
 Sample Input : 
 5 6 
 0 1 
